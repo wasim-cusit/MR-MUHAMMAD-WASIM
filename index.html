@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio - Muhammad Wasim</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="script.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style>
+        /* Glowing Hover Effect */
+        .hover-glow {
+            transition: all 0.3s ease-in-out;
+        }
+        .hover-glow:hover {
+            transform: scale(1.1);
+            text-shadow: 0px 0px 10px #00f0ff;
+        }
+
+        /* Underline Animation */
+        .hover-underline {
+            display: inline-block;
+            position: relative;
+            color: white;
+        }
+        .hover-underline::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            bottom: -3px;
+            left: 0;
+            background-color: #00f0ff;
+            transform: scaleX(0);
+            transition: transform 0.3s ease-in-out;
+        }
+        .hover-underline:hover::after {
+            transform: scaleX(1);
+        }
+
+        /* Line Effect */
+        .cool-line {
+            width: 80%;
+            height: 4px;
+            margin: 20px auto;
+            background: linear-gradient(to right, #00f0ff, #ff00f0);
+            border-radius: 5px;
+        }
+
+        /* Progress Timeline */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 0;
+        }
+        .timeline::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(to bottom, #00f0ff, #ff00f0);
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .timeline-item {
+            padding: 20px;
+            position: relative;
+            width: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            margin-bottom: 20px;
+            transition: all 0.3s ease-in-out;
+        }
+        .timeline-item:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.2);
+        }
+        .timeline-item:nth-child(odd) {
+            left: 0;
+        }
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+        .timeline-item::after {
+            content: "";
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: #00f0ff;
+            border: 4px solid #ff00f0;
+            border-radius: 50%;
+            top: 20px;
+            right: -10px;
+            z-index: 1;
+        }
+        .timeline-item:nth-child(even)::after {
+            left: -10px;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white font-sans">
+
+    <!-- Navigation Bar -->
+    <nav class="bg-gray-800 shadow-lg fixed w-full top-0 z-50">
+        <div class="container mx-auto flex justify-between items-center py-4 px-6">
+            <h1 class="text-2xl font-bold text-blue-400 hover-glow">Muhammad Wasim</h1>
+            <ul class="hidden md:flex space-x-6">
+                <li><a href="#about" class="hover-underline">About</a></li>
+                <li><a href="#skills" class="hover-underline">Skills</a></li>
+                <li><a href="#projects" class="hover-underline">Projects</a></li>
+                <li><a href="#progress" class="hover-underline">Progress</a></li>
+                <li><a href="#contact" class="hover-underline">Contact</a></li>
+                <li class="relative group">
+                    <button class="hover-underline">Mini Projects ▾</button>
+                    <ul class="absolute hidden bg-gray-700 text-white group-hover:block mt-2 py-2 rounded shadow-lg">
+                        <li><a href="./QrCodeGenerator.html" class="block px-4 py-2 hover:bg-gray-600">QR Code Generator</a></li>
+                        <li><a href="./fullStackDevelopmentRoadMap.html.html" class="block px-4 py-2 hover:bg-gray-600">Full Stack Road Map (Laravel + MVC)</a></li>
+                        <!-- <li><a href="project3.html" class="block px-4 py-2 hover:bg-gray-600">Project 3</a></li> -->
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <header class="bg-gray-800 py-20 text-center shadow-lg mt-16">
+        <img src="./myImage.jpg" alt="Muhammad Wasim" class="w-32 h-32 mx-auto rounded-full border-4 border-blue-400 hover-glow">
+        <h1 class="text-5xl font-extrabold text-blue-400 mt-4 hover-glow">Muhammad Wasim</h1>
+        <p class="text-lg text-gray-400 mt-2">"Code is poetry, and I am its poet."</p>
+        <div class="cool-line"></div>
+    </header>
+
+ <!-- About Section -->
+<section id="about" class="text-center py-10 px-6">
+    <h2 class="text-4xl font-bold text-yellow-400 hover-underline">About Me</h2>
+    <div class="cool-line"></div>
+    <div class="max-w-2xl mx-auto mt-4 text-gray-400 text-left space-y-4">
+        <p>
+            Hi, I'm <span class="text-blue-400">Muhammad Wasim</span>, a passionate and detail-oriented <span class="text-green-400">Full-Stack Developer</span> with expertise in building scalable and efficient web applications. I specialize in modern web technologies like <span class="text-blue-400">Laravel</span>, <span class="text-blue-400">React</span>, <span class="text-blue-400">Node.js</span>, and <span class="text-blue-400">MongoDB</span>, and I love turning complex problems into simple, elegant solutions.
+        </p>
+        <p>
+            I hold a <span class="text-blue-400">Bachelor's degree in Software Engineering</span> from <span class="text-blue-400">City University of Science & IT, Peshawar</span>. Over the years, I've worked on a variety of projects, from small personal tools to large-scale platforms like <span class="text-blue-400">LEGSER</span> (a legal services platform) and a <span class="text-blue-400">Student Attendance Management System</span>.
+        </p>
+        <p>
+            My journey in software development began in <span class="text-blue-400">2021</span> when I started learning the basics of <span class="text-blue-400">HTML</span>, <span class="text-blue-400">CSS</span>, and <span class="text-blue-400">JavaScript</span>. Since then, I've expanded my skill set to include backend development with <span class="text-blue-400">Laravel</span> and <span class="text-blue-400">Node.js</span>, as well as frontend development with <span class="text-blue-400">React</span> and <span class="text-blue-400">Tailwind CSS</span>.
+        </p>
+        <p>
+            I'm passionate about creating user-friendly, responsive, and high-performance applications. Whether it's building a RESTful API, designing a sleek UI, or optimizing database queries, I enjoy every aspect of the development process. My goal is to continuously learn and grow as a developer while contributing to meaningful projects that make a difference.
+        </p>
+        <p>
+            When I'm not coding, you can find me exploring new technologies, contributing to open-source projects, or sharing my knowledge through blogs and tutorials. I believe in the power of collaboration and am always open to new opportunities and challenges.
+        </p>
+    </div>
+</section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-10 px-6 bg-gray-800 rounded-lg max-w-4xl mx-auto text-center">
+        <h2 class="text-4xl font-bold text-green-400 hover-underline">Skills</h2>
+        <div class="cool-line"></div>
+        <ul class="grid grid-cols-2 md:grid-cols-3 gap-6 mt-5">
+            <li class="bg-gray-700 p-4 rounded-lg shadow-lg hover-glow">HTML & CSS & BOOTSTRAP + TAILWIND</li>
+            <li class="bg-gray-700 p-4 rounded-lg shadow-lg hover-glow">JavaScript & ES6+</li>
+            <li class="bg-gray-700 p-4 rounded-lg shadow-lg hover-glow">React</li>
+            <li class="bg-gray-700 p-4 rounded-lg shadow-lg hover-glow">Laravel & PHP</li>
+            <li class="bg-gray-700 p-4 rounded-lg shadow-lg hover-glow">Node.js</li>
+            <li class="bg-gray-700 p-4 rounded-lg shadow-lg hover-glow">MySQL</li>
+        </ul>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-10 px-6">
+        <h2 class="text-4xl font-bold text-pink-400 hover-underline text-center">Projects</h2>
+        <div class="cool-line"></div>
+        <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto mt-6">
+            <div class="bg-gray-800 p-6 rounded-lg shadow-xl hover-glow">
+                <h3 class="text-xl font-semibold text-blue-300">LEGSER - Legal Services Platform</h3>
+                <p class="text-gray-400 mt-2">A web app connecting people with legal consultants.</p>
+            </div>
+            <div class="bg-gray-800 p-6 rounded-lg shadow-xl hover-glow">
+                <h3 class="text-xl font-semibold text-blue-300">Student Attendance Management System</h3>
+                <p class="text-gray-400 mt-2">A web-based attendance tracking system.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Yearly Progress Section -->
+    <section id="progress" class="py-10 px-6">
+        <h2 class="text-4xl font-bold text-purple-400 hover-underline text-center">Yearly Progress</h2>
+        <div class="cool-line"></div>
+        <div class="timeline">
+            <div class="timeline-item">
+                <h3 class="text-xl font-semibold text-blue-300">2021</h3>
+                <p class="text-gray-400">Started learning HTML, CSS, and JavaScript.</p>
+            </div>
+            <div class="timeline-item">
+                <h3 class="text-xl font-semibold text-blue-300">2022</h3>
+                <p class="text-gray-400">Built my first full-stack application with Laravel.</p>
+            </div>
+            <div class="timeline-item">
+                <h3 class="text-xl font-semibold text-blue-300">2023</h3>
+                <p class="text-gray-400">Explored React, Next.js, and Node.js.</p>
+            </div>
+            <div class="timeline-item">
+                <h3 class="text-xl font-semibold text-blue-300">2024</h3>
+                <p class="text-gray-400">Developed complex applications like LEGSER and Student Attendance System.</p>
+            </div>
+        </div>
+    </section>
+
+<!-- Contact Section -->
+<section id="contact" class="py-10 px-6 bg-gray-900">
+    <h2 class="text-4xl font-bold text-red-400 hover-underline text-center">Contact Me</h2>
+    <div class="cool-line"></div>
+    <div class="max-w-4xl mx-auto mt-8 grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- Contact Information -->
+        <div class="bg-gray-800 p-6 rounded-lg shadow-xl hover-glow">
+            <h3 class="text-2xl font-semibold text-blue-300">Get in Touch</h3>
+            <p class="text-gray-400 mt-4">Feel free to reach out to me for collaborations, job opportunities, or just a friendly chat!</p>
+            <div class="mt-6 space-y-4">
+                <div class="flex items-center space-x-4">
+                    <i class="fas fa-envelope text-blue-400 fa-lg"></i>
+                    <a href="mailto:muhammadwasim.cusit@gmail.com" class="text-gray-400 hover:text-blue-400">muhammadwasim.cusit@gmail.com</a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <i class="fas fa-phone text-blue-400 fa-lg"></i>
+                    <a href="tel:03257627554" class="text-gray-400 hover:text-blue-400">0325 7627554</a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <i class="fab fa-whatsapp text-blue-400 fa-lg"></i>
+                    <a href="https://wa.me/03257627554" class="text-gray-400 hover:text-blue-400">Chat on WhatsApp</a>
+                </div>
+            </div>
+            <div class="mt-6 flex space-x-6 justify-center">
+                <a href="https://github.com/wasim-cusit" class="text-blue-400 hover:text-blue-300">
+                    <i class="fab fa-github fa-2x">Github </i>
+                </a>
+                <a href="https://linkedin.com/in/wasim13257" class="text-blue-400 hover:text-blue-300">
+                    <i class="fab fa-linkedin fa-2x">LinkedIn</i>
+                </a>
+                <a href="https://wasimcusit.wordpress.com/" class="text-blue-400 hover:text-blue-300">
+                    <i class="fab fa-website fa-2x">Website</i>
+                </a>
+            </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="bg-gray-800 p-6 rounded-lg shadow-xl hover-glow">
+            <h3 class="text-2xl font-semibold text-blue-300">Send Me a Message</h3>
+            <form class="mt-4 space-y-4">
+                <input
+                    type="text"
+                    placeholder="Your Name"
+                    class="w-full p-3 bg-gray-700 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-blue-400 hover:bg-gray-600 transition"
+                    required
+                />
+                <input
+                    type="email"
+                    placeholder="Your Email"
+                    class="w-full p-3 bg-gray-700 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-blue-400 hover:bg-gray-600 transition"
+                    required
+                />
+                <textarea
+                    placeholder="Your Message"
+                    rows="5"
+                    class="w-full p-3 bg-gray-700 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-blue-400 hover:bg-gray-600 transition"
+                    required
+                ></textarea>
+                <button
+                    type="submit"
+                    class="w-full px-6 py-3 bg-green-500 rounded-lg text-white font-semibold hover:bg-green-600 transition shadow-lg"
+                >
+                    Send Message
+                </button>
+            </form>
+        </div>
+    </div>
+</section>
+    <!-- Footer -->
+    <footer class="bg-gray-800 py-6 text-center text-gray-400 mt-10 shadow-lg">
+        <p>&copy; 2025 Muhammad Wasim. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Full-Stack Development Roadmap</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <style>
+    body {
+      background-color: #f8f9fa;
+      font-family: 'Arial', sans-serif;
+    }
+    .roadmap-container {
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    .roadmap-step {
+      margin-bottom: 20px;
+      padding: 15px;
+      border-left: 5px solid #007bff;
+      background-color: #f1f1f1;
+      border-radius: 5px;
+    }
+    .roadmap-step h3 {
+      margin-top: 0;
+      color: #007bff;
+    }
+    .roadmap-step p {
+      margin-bottom: 0;
+      color: #333;
+    }
+    .nested-steps {
+      margin-left: 20px;
+      margin-top: 10px;
+    }
+    .nested-steps .form-check {
+      margin-bottom: 5px;
+    }
+    .form-check-input:checked {
+      background-color: #007bff;
+      border-color: #007bff;
+    }
+    .progress-bar {
+      background-color: #007bff;
+      border-radius: 5px;
+      
+    }
+    .reset-button {
+      margin-top: 20px;
+      text-align: center;
+    }
+    .step-progress {
+      margin-top: 10px;
+    }
+    .step-progress .progress {
+      height: 10px;
+    }
+    .collapse-btn {
+      cursor: pointer;
+      color: #007bff;
+      text-decoration: none;
+    }
+    .collapse-btn:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="roadmap-container">
+    <!-- Header -->
+    <header>
+      <h1 class="text-center mb-4">Full-Stack Development Roadmap</h1>
+      <p class="text-center mb-4">Track your progress as you learn full-stack development.</p>
+    </header>
+
+    <!-- Overall Progress Bar -->
+    <div class="progress mb-1">
+      <div id="overall-progress-bar" class="progress-bar" style="width: 0%;"></div>
+    </div>
+
+    <!-- Roadmap Steps -->
+    <main id="roadmap-steps">
+      <!-- Phase 1: Front-End Development -->
+      <section class="roadmap-step">
+        <h3>1. Front-End Development</h3>
+        <p>Learn the basics of front-end development, including HTML, CSS, and JavaScript.</p>
+        <div class="step-progress">
+          <div class="progress">
+            <div id="phase1-progress" class="progress-bar" style="width: 0%;"></div>
+          </div>
+        </div>
+        <a class="collapse-btn" data-bs-toggle="collapse" href="#phase1-details" role="button">
+          Show Details
+        </a>
+        <div class="collapse" id="phase1-details">
+          <div class="nested-steps">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="phase1-1">
+              <label class="form-check-label" for="phase1-1">Learn HTML5 (semantic tags, forms, etc.)</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="phase1-2">
+              <label class="form-check-label" for="phase1-2">Learn CSS3 (flexbox, grid, animations, responsive design)</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="phase1-3">
+              <label class="form-check-label" for="phase1-3">Learn JavaScript basics (variables, loops, conditionals, functions)</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="phase1-4">
+              <label class="form-check-label" for="phase1-4">Learn DOM manipulation and events</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="phase1-5">
+              <label class="form-check-label" for="phase1-5">Learn ES6+ features (arrow functions, promises, async/await)</label>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Phase 2: Back-End Development -->
+      <section class="roadmap-step">
+        <h3>2. Back-End Development</h3>
+        <p>Learn back-end development with PHP and Laravel.</p>
+        <div class="step-progress">
+          <div class="progress">
+            <div id="phase2-progress" class="progress-bar" style="width: 0%;"></div>
+          </div>
+        </div>
+        <a class="collapse-btn" data-bs-toggle="collapse" href="#phase2-details" role="button">
+          Show Details
+        </a>
+        <div class="collapse" id="phase2-details">
+          <div class="nested-steps">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="phase2-1">
+              <label class="form-check-label" for="phase2-1">Learn PHP basics (syntax, variables, loops, conditionals)</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="phase2-2">
+              <label class="form-check-label" for="phase2-2">Learn OOP in PHP (classes, objects, inheritance)</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="phase2-3">
+              <label class="form-check-label" for="phase2-3">Learn MySQL basics (CRUD operations, relationships)</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="phase2-4">
+              <label class="form-check-label" for="phase2-4">Learn Laravel basics (routing, controllers, views)</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="phase2-5">
+              <label class="form-check-label" for="phase2-5">Learn Eloquent ORM and migrations</label>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Phase 3: Full-Stack Integration -->
+      <section class="roadmap-step">
+        <h3>3. Full-Stack Integration</h3>
+        <p>Integrate front-end and back-end to build full-stack applications.</p>
+        <div class="step-progress">
+          <div class="progress">
+            <div id="phase3-progress" class="progress-bar" style="width: 0%;"></div>
+          </div>
+        </div>
+        <a class="collapse-btn" data-bs-toggle="collapse" href="#phase3-details" role="button">
+          Show Details
+        </a>
+        <div class="collapse" id="phase3-details">
+          <div class="nested-steps">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="phase3-1">
+              <label class="form-check-label" for="phase3-1">Learn RESTful API development with Laravel</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="phase3-2">
+              <label class="form-check-label" for="phase3-2">Learn front-end frameworks (Vue.js or React.js)</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="phase3-3">
+              <label class="form-check-label" for="phase3-3">Integrate front-end with Laravel APIs</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="phase3-4">
+              <label class="form-check-label" for="phase3-4">Learn authentication and authorization</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="phase3-5">
+              <label class="form-check-label" for="phase3-5">Build a full-stack project (e.g., blogging platform, e-commerce site)</label>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Add more phases as needed -->
+    </main>
+
+    <!-- Reset Button -->
+    <footer class="reset-button">
+      <button class="btn btn-danger" onclick="resetProgress()">Reset Progress</button>
+    </footer>
+  </div>
+
+  <!-- Bootstrap JS and Popper.js -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Custom JS -->
+  <script>
+    // Function to update progress for a specific phase
+    function updatePhaseProgress(phaseId) {
+      const checkboxes = document.querySelectorAll(`#${phaseId}-details .form-check-input`);
+      const checked = Array.from(checkboxes).filter((checkbox) => checkbox.checked).length;
+      const total = checkboxes.length;
+      const progress = (checked / total) * 100;
+      document.getElementById(`${phaseId}-progress`).style.width = `${progress}%`;
+      updateOverallProgress();
+    }
+
+    // Function to update overall progress
+    function updateOverallProgress() {
+      const allCheckboxes = document.querySelectorAll('.form-check-input');
+      const allChecked = Array.from(allCheckboxes).filter((checkbox) => checkbox.checked).length;
+      const allTotal = allCheckboxes.length;
+      const overallProgress = (allChecked / allTotal) * 100;
+      document.getElementById('overall-progress-bar').style.width = `${overallProgress}%`;
+    }
+
+    // Save checkbox state to localStorage and update progress
+    document.querySelectorAll('.form-check-input').forEach((checkbox) => {
+      checkbox.addEventListener('change', function () {
+        localStorage.setItem(checkbox.id, checkbox.checked);
+        const phaseId = checkbox.id.split('-')[0]; // Extract phase ID (e.g., "phase1" from "phase1-1")
+        updatePhaseProgress(phaseId);
+      });
+
+      // Load saved state from localStorage
+      const isChecked = localStorage.getItem(checkbox.id) === 'true';
+      checkbox.checked = isChecked;
+    });
+
+    // Reset progress
+    function resetProgress() {
+      localStorage.clear();
+      document.querySelectorAll('.form-check-input').forEach((checkbox) => {
+        checkbox.checked = false;
+      });
+      document.querySelectorAll('.progress-bar').forEach((progressBar) => {
+        progressBar.style.width = '0%';
+      });
+    }
+
+    // Initialize progress bars
+    document.querySelectorAll('.roadmap-step').forEach((step) => {
+      const phaseId = step.querySelector('.collapse').id.replace('-details', '');
+      updatePhaseProgress(phaseId);
+    });
+  </script>
+</body>
+</html>
