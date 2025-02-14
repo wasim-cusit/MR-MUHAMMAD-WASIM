@@ -110,29 +110,44 @@
         <h1 class="text-2xl font-bold text-blue-400 hover-glow">Muhammad Wasim</h1>
         
         <!-- Mobile Menu Button -->
-        <button id="menu-toggle" class="md:hidden text-white focus:outline-none">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-            </svg>
-        </button>
-        
-        <!-- Navigation Links -->
-        <ul id="menu" class="hidden md:flex md:space-x-6 absolute md:relative top-full left-0 w-full md:w-auto bg-gray-800 md:bg-transparent flex-col md:flex-row items-center md:items-center md:flex">
-            <li><a href="#about" class="block px-4 py-2 md:px-0 hover-underline">About</a></li>
-            <li><a href="#skills" class="block px-4 py-2 md:px-0 hover-underline">Skills</a></li>
-            <li><a href="#projects" class="block px-4 py-2 md:px-0 hover-underline">Projects</a></li>
-            <li><a href="#progress" class="block px-4 py-2 md:px-0 hover-underline">Progress</a></li>
-            <li><a href="#contact" class="block px-4 py-2 md:px-0 hover-underline">Contact</a></li>
-            <li class="relative group">
-                <button class="block px-4 py-2 md:px-0 hover-underline">Mini Projects ▾</button>
-                <ul class="absolute hidden bg-gray-700 text-white group-hover:block mt-2 py-2 rounded shadow-lg">
-                    <li><a href="./QrCodeGenerator.html" class="block px-4 py-2 hover:bg-gray-600">QR Code Generator</a></li>
-                    <li><a href="./fullStackDevelopmentRoadMap.html" class="block px-4 py-2 hover:bg-gray-600">Full Stack Road Map (Laravel + MVC)</a></li>
-                </ul>
-            </li>
+<button id="menu-toggle" class="md:hidden text-white focus:outline-none">
+    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M4 6h16M4 12h16m-7 6h7"></path>
+    </svg>
+</button>
+
+<!-- Mobile Menu -->
+<ul id="menu"
+    class="hidden md:flex flex-col md:flex-row absolute md:relative top-16 left-0 w-full md:w-auto bg-gray-800 md:bg-transparent shadow-lg md:shadow-none z-50">
+    <li><a href="#about"
+            class="block px-4 py-2 md:px-0 hover-underline">About</a></li>
+    <li><a href="#skills"
+            class="block px-4 py-2 md:px-0 hover-underline">Skills</a></li>
+    <li><a href="#projects"
+            class="block px-4 py-2 md:px-0 hover-underline">Projects</a></li>
+    <li><a href="#progress"
+            class="block px-4 py-2 md:px-0 hover-underline">Progress</a></li>
+    <li><a href="#contact"
+            class="block px-4 py-2 md:px-0 hover-underline">Contact</a></li>
+    <li class="relative group">
+        <button
+            class="block px-4 py-2 md:px-0 hover-underline">Mini Projects ▾</button>
+        <ul
+            class="absolute hidden bg-gray-700 text-white group-hover:block mt-2 py-2 rounded shadow-lg w-full">
+            <li><a href="./QrCodeGenerator.html"
+                    class="block px-4 py-2 hover:bg-gray-600">QR Code
+                    Generator</a></li>
+            <li><a href="./fullStackDevelopmentRoadMap.html"
+                    class="block px-4 py-2 hover:bg-gray-600">Full Stack Road
+                    Map (Laravel + MVC)</a></li>
         </ul>
-    </div>
-</nav>
+    </li>
+</ul>
+
+
+
 
 
 
@@ -389,14 +404,15 @@
         </footer>
 
     </body>
-    <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        document.getElementById('menu-toggle').addEventListener('click', function () {
-            let menu = document.getElementById('menu');
-            menu.classList.toggle('hidden');
-            menu.classList.toggle('flex');
-            menu.classList.toggle('flex-col');
-        });
+ <!-- JavaScript for Mobile Menu Toggle -->
+<script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('menu');
+
+    menuToggle.addEventListener('click', () => {
+        menu.classList.toggle('hidden');
+        menu.classList.toggle('flex');
+        menu.classList.toggle('flex-col');
     });
 </script>
 
