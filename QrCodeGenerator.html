@@ -1,10 +1,30 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-    <title>QR Code Generator</title>
-    <!-- <link rel="website icon" href="background.jpg" > -->
-    <style>
+    <head>
+        <title>QR Code Generator</title>
+        <!-- <link rel="website icon" href="background.jpg" > -->
+        <style>
+
+        .top-links {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+
+        .top-links a {
+            background-color: #007BFF;
+            color: #fff;
+            text-decoration: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .top-links a:hover {
+            background-color: #0056b3;
+        }
+
         /* Define styles for mobile screens */
         @media (max-width: 768px) {
             body {
@@ -154,28 +174,33 @@
             color: #333;
         }
     </style>
-    <script src="https://cdn.jsdelivr.net/npm/qrious"></script>
-</head>
+        <script src="https://cdn.jsdelivr.net/npm/qrious"></script>
+    </head>
 
-<body>
-    <div class="container">
-        <h1>QR Code Generator</h1>
-        <label for="text">Enter the information:</label>
-        <input type="text" id="text">
-        <button onclick="generateQRCode()">Generate QR Code</button>
-
-        <div id="qrcode-container" style="display: none;">
-            <img id="qrcode-image" src="" alt="QR Code">
-            <a id="downloadLink" style="display: none;" download="qrcode.png">Download QR Code</a>
+    <body>
+        <!-- Home Page Button links -->
+        <div class="top-links">
+            <a href="./index.html" target="_blank">Home</a>
         </div>
-    </div>
+        <div class="container">
+            <h1>QR Code Generator</h1>
+            <label for="text">Enter the information:</label>
+            <input type="text" id="text">
+            <button onclick="generateQRCode()">Generate QR Code</button>
 
-    <!-- Added footer with developer name -->
-    <div class="footer">
-        Developed by MUHAMMAD WASIM (13257)
-    </div>
+            <div id="qrcode-container" style="display: none;">
+                <img id="qrcode-image" src alt="QR Code">
+                <a id="downloadLink" style="display: none;"
+                    download="qrcode.png">Download QR Code</a>
+            </div>
+        </div>
 
-    <script>
+        <!-- Added footer with developer name -->
+        <div class="footer">
+            Developed by MUHAMMAD WASIM (13257)
+        </div>
+
+        <script>
 
         let docTitle = document.title;
 
@@ -224,6 +249,6 @@
             inputField.placeholder = "Enter the information for next QR code generating";
         }
     </script>
-</body>
+    </body>
 
 </html>
