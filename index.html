@@ -100,6 +100,19 @@
             left: -10px;
         }
     </style>
+    <!-- JavaScript for Toggle Menu -->
+<script>
+    document.getElementById('menu-toggle').addEventListener('click', function() {
+        let menu = document.getElementById('menu');
+        if (menu.classList.contains('hidden')) {
+            menu.classList.remove('hidden');
+            menu.classList.add('flex', 'flex-col');
+        } else {
+            menu.classList.add('hidden');
+            menu.classList.remove('flex', 'flex-col');
+        }
+    });
+</script>
     </head>
     <body class="bg-gray-900 text-white font-sans">
 
@@ -133,14 +146,8 @@
     </div>
 </nav>
 
-<!-- JavaScript for Toggle Menu -->
-<script>
-    document.getElementById('menu-toggle').addEventListener('click', function() {
-        document.getElementById('menu').classList.toggle('hidden');
-    });
-</script>
 
-        
+
 
         <!-- Header Section -->
         <header class="bg-gray-800 py-20 text-center shadow-lg mt-16">
