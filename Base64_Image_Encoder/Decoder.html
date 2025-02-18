@@ -1,10 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Base64 Image Encoder/Decoder</title>
-  <style>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Base64 Image Encoder/Decoder</title>
+        <style>
+    /* Its for Home page links */
+    .top-links {
+            position: absolute;
+            top: 20px;
+            left: 10px;
+        }
+
+        .top-links a {
+            background-color: #007BFF;
+            color: #fff;
+            text-decoration: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .top-links a:hover {
+            background-color: #0056b3;
+        }
+
     body {
       font-family: Arial, sans-serif;
       margin: 20px;
@@ -16,7 +36,7 @@
       color: #444;
     }
     .container {
-      max-width: 600px;
+      max-width: 800px;
       margin: 0 auto;
       background: #fff;
       padding: 20px;
@@ -32,7 +52,7 @@
       font-weight: bold;
     }
     input[type="file"], textarea {
-      width: 100%;
+      width: 97%;
       padding: 10px;
       border: 1px solid #ccc;
       border-radius: 4px;
@@ -43,15 +63,15 @@
       resize: vertical;
     }
     button {
-      display: block;
-      width: 100%;
-      padding: 10px;
+      display: inline-block;
+      padding: 10px 20px;
       background-color: #007bff;
       color: #fff;
       border: none;
       border-radius: 4px;
       font-size: 16px;
       cursor: pointer;
+      margin: 5px;
     }
     button:hover {
       background-color: #0056b3;
@@ -66,35 +86,85 @@
       border-radius: 4px;
       margin-top: 10px;
     }
+    .info {
+      margin-top: 30px;
+      padding: 20px;
+      background-color: #f9f9f9;
+      border-radius: 8px;
+      border: 1px solid #ddd;
+    }
+    .info h2 {
+      margin-top: 0;
+      color: #444;
+    }
+    .info p {
+      line-height: 1.6;
+    }
   </style>
-</head>
-<body>
-  <div class="container">
-    <h1>Base64 Image Encoder/Decoder</h1>
+    </head>
+    <body>
 
-    <!-- Encoder Section -->
-    <div class="input-group">
-      <label for="imageInput">Upload Image to Encode:</label>
-      <input type="file" id="imageInput" accept="image/*">
-      <button onclick="encodeImage()">Encode to Base64</button>
-    </div>
+        <div class="top-links">
+            <a href="./index.html" target="_blank">Home</a>
+        </div>
+        <br>
+        <br>
 
-    <!-- Decoder Section -->
-    <div class="input-group">
-      <label for="base64Input">Paste Base64 String to Decode:</label>
-      <textarea id="base64Input" placeholder="Paste Base64 string here..."></textarea>
-      <button onclick="decodeImage()">Decode to Image</button>
-    </div>
+        <div class="container">
+            <h1>Base64 Image Encoder/Decoder</h1>
 
-    <!-- Output Section -->
-    <div class="output">
-      <h2>Output</h2>
-      <div id="encodedOutput"></div>
-      <div id="decodedOutput"></div>
-    </div>
-  </div>
+            <!-- Encoder Section -->
+            <div class="input-group">
+                <label for="imageInput">Upload Image to Encode:</label>
+                <input type="file" id="imageInput" accept="image/*">
+                <button onclick="encodeImage()">Encode to Base64</button>
+            </div>
 
-  <script>
+             <!-- Encoder Output Section -->
+             <div class="output">
+                <h2>Encoder Output Section</h2>
+                <div id="encodedOutput"></div>
+            </div>
+
+            <!-- Decoder Section -->
+            <div class="input-group">
+                <label for="base64Input">Paste Base64 String to Decode:</label>
+                <textarea id="base64Input"
+                    placeholder="Paste Base64 string here..."></textarea>
+                <button onclick="decodeImage()">Decode to Image</button>
+            </div>
+
+            <!-- Decoder Output Section -->
+            <div class="output">
+                <h2>Decoder Output Section</h2>
+                <div id="decodedOutput"></div>
+            </div>
+
+            <!-- Information Section -->
+            <div class="info">
+                <h2>What is Base64 Encoding/Decoding?</h2>
+                <p>
+                    Base64 is a method of encoding binary data (like images)
+                    into ASCII text format. It is commonly used to embed images
+                    directly into HTML, CSS, or JavaScript files, or to transmit
+                    binary data over text-based protocols like HTTP.
+                </p>
+                <p>
+                    <strong>Encoding:</strong> Converts an image (or any binary
+                    file) into a Base64 string.<br>
+                    <strong>Decoding:</strong> Converts a Base64 string back
+                    into an image (or binary file).
+                </p>
+                <p>
+                    This tool allows you to encode images into Base64 strings
+                    and decode Base64 strings back into images. You can also
+                    download the decoded images or copy the encoded Base64
+                    strings to your clipboard.
+                </p>
+            </div>
+        </div>
+
+        <script>
     // Function to encode an image to Base64
     function encodeImage() {
       const fileInput = document.getElementById('imageInput');
@@ -110,7 +180,11 @@
 
       reader.onload = function (event) {
         const base64String = event.target.result;
-        outputDiv.innerHTML = `<strong>Base64 Encoded String:</strong><br><textarea readonly>${base64String}</textarea>`;
+        outputDiv.innerHTML = `
+          <strong>Base64 Encoded String:</strong><br>
+          <textarea id="encodedText" readonly>${base64String}</textarea><br>
+          <button onclick="copyEncodedText()">Copy Text</button>
+        `;
       };
 
       reader.onerror = function (error) {
@@ -119,6 +193,14 @@
       };
 
       reader.readAsDataURL(file);
+    }
+
+    // Function to copy encoded text to clipboard
+    function copyEncodedText() {
+      const encodedText = document.getElementById('encodedText');
+      encodedText.select();
+      document.execCommand('copy');
+      alert('Base64 text copied to clipboard!');
     }
 
     // Function to decode a Base64 string to an image
@@ -131,8 +213,22 @@
         return;
       }
 
-      outputDiv.innerHTML = `<strong>Decoded Image:</strong><br><img src="${base64Input}" alt="Decoded Image">`;
+      outputDiv.innerHTML = `
+        <strong>Decoded Image:</strong><br>
+        <img src="${base64Input}" alt="Decoded Image"><br>
+        <button onclick="downloadImage('${base64Input}')">Download Image</button>
+      `;
+    }
+
+    // Function to download the decoded image
+    function downloadImage(base64String) {
+      const link = document.createElement('a');
+      link.href = base64String;
+      link.download = 'decoded_image.png'; // Default filename
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
     }
   </script>
-</body>
+    </body>
 </html>
